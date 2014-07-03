@@ -17,7 +17,7 @@ public class GeekDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public List<Geek> recupereGeek(String sexe, String interet) {
+	public List<Geek> recupereGeeks(String sexe, String interet) {
 		String jpql = "select g from Geek g"
 				+ " join Interet i"
 				+ " where g.sexe = :sexe and i.nom = :interet";
