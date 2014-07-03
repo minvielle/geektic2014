@@ -17,14 +17,26 @@ public class GeekDAO {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public List<Geek> recupereGeeks(String sexe, String interet) {
-		String jpql = "select g from Geek g"
-				+ " join Interet i"
-				+ " where g.sexe = :sexe and i.nom = :interet";
+	public List<Geek> recupereGeeks(String sexe, int interet) {
+		String jpql = "select distinct g from Geek g"
+				+ " left join fetch g.interets gi"
+				+ " inner join g.interets i"
+				+ " where g.sexe = :sexe and i.num = :interet";
 		TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
 		query.setParameter("sexe", sexe);
 		query.setParameter("interet", interet);
 		
 		return query.getResultList();
+	}
+	
+	public Geek recupereUnGeek(int id) {
+		String jpql = "select distinct g from Geek g"
+				+ " left join fetch g.interets gi"
+				+ " inner join g.interets i"
+				+ " where g.num = :num";
+		TypedQuery<Geek> query = em.createQuery(jpql, Geek.class);
+		query.setParameter("num", id);
+		
+		return query.getSingleResult();
 	}
 }

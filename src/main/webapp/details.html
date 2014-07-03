@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<div ng-controller="DetailsCtrl">
+    <h1>{{geek.nom}} {{geek.prenom}}</h1>
+    
+    <p><img src="http://www.gravatar.com/avatar/{{geek.url_gravatar}}"/></p>
+    <p>Age : {{geek.age}}</p>
+    <p> Centres d'interêt: </p>    
+    <ul>             
+        <li ng-repeat="interet in geek.interets">
+            {{ interet.nom }}
+        </li>    
+    </ul>
+    
+    <a href="#/">Revenir à la page d'acceuil</a>
+</div>

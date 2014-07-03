@@ -4,9 +4,39 @@
     <head>
         <title>Geektic</title>
     </head>
-    <body ng-controller="HelloCtrl">
-        <h1>{{ helloMessage.message }}</h1>
-
+    <body ng-controller="GeekCtrl" ng-view>
+        <h1>Geektic</h1>
+        
+        <form name="form">
+        	<fieldset>
+        		<legend>Sexe : </legend>
+        		
+        		<label for="F">Femme </label>
+        		<input type="radio" id="F" name="sexe" value="F" ng-model="sexe"/>
+        		<label for="H">Homme </label>
+        		<input type="radio" id="H" name="sexe" value="M" ng-model="sexe"/>
+        		
+        	</fieldset>
+        	
+        	<fieldset>
+        		<legend>Interet : </legend>
+        		
+        		<select ng-model="interet" ng-options="interet.nom for interet in interets">
+				</select>
+        	</fieldset>
+        	<button ng-click="chercher()">Chercher</button>
+        </form>
+        
+        
+        <div ng-repeat="geek in geeks">
+        	<div ng-click="details = ! details">
+        		<p>{{geek.nom}}</p>
+        		<div ng-show="details">
+	        		<a href="#/geek/{{geek.num}}">Voir les détails...</a>
+        		</div>
+        	</div>
+        </div>
+        
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
         <script src="/js/app.js"></script>
