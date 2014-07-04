@@ -1,0 +1,36 @@
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Minvielle', 'Matthieu', 'M', 23, 'dab08478b226280d4a30894c9a7ed719');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Minv', 'Mat', 'M', 29, '82f9e178a16364bf561d0ed4da09a35d');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Geek', 'Gras', 'M', 37, '6d8ebb117e8d83d74ea95fbdd0f87e13');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Azerty', 'Lize', 'F', 25, '9d4dba599e92eee38095a56841205048');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Femelle', 'Femme', 'F', 43, '16b6783e9b99b1199c75761eaf5c0685');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Salut', 'Bien', 'M', 35, 'c032a0e8e40dd79b715420e4c5d03b00');
+INSERT INTO Geek (nom, prenom, sexe, age, url_gravatar) VALUES ('Princesse', 'Sisi', 'F', 23, '24780fb6df85a943c7aea0402c843737');
+
+INSERT INTO Interet (nom) VALUES ('JEE');
+INSERT INTO Interet (nom) VALUES ('JAVA');
+INSERT INTO Interet (nom) VALUES ('Angular.js');
+INSERT INTO Interet (nom) VALUES ('Node.js');
+INSERT INTO Interet (nom) VALUES ('C#');
+INSERT INTO Interet (nom) VALUES ('C++');
+INSERT INTO Interet (nom) VALUES ('Pyhton');
+INSERT INTO Interet (nom) VALUES ('PHP');
+INSERT INTO Interet (nom) VALUES ('JUnit');
+INSERT INTO Interet (nom) VALUES ('Windev');
+
+INSERT INTO Liaison_Geek_Interet VALUES (0, 0);
+INSERT INTO Liaison_Geek_Interet VALUES (0, 1);
+INSERT INTO Liaison_Geek_Interet VALUES (0, 2);
+INSERT INTO Liaison_Geek_Interet VALUES (0, 3);
+INSERT INTO Liaison_Geek_Interet VALUES (0, 6);
+INSERT INTO Liaison_Geek_Interet VALUES (1, 5);
+INSERT INTO Liaison_Geek_Interet VALUES (1, 3);
+INSERT INTO Liaison_Geek_Interet VALUES (1, 9);
+INSERT INTO Liaison_Geek_Interet VALUES (2, 0);
+INSERT INTO Liaison_Geek_Interet VALUES (2, 7);
+INSERT INTO Liaison_Geek_Interet VALUES (3, 9);
+INSERT INTO Liaison_Geek_Interet VALUES (3, 0);
+INSERT INTO Liaison_Geek_Interet VALUES (6, 0);
+INSERT INTO Liaison_Geek_Interet VALUES (5, 5);
+INSERT INTO Liaison_Geek_Interet VALUES (5, 1);
+INSERT INTO Liaison_Geek_Interet VALUES (5, 8);
+INSERT INTO Liaison_Geek_Interet VALUES (5, 7);
