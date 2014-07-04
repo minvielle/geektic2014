@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ninja_squad.geektic.dao.GeekDAO;
-import com.ninja_squad.geektic.dao.InteretDAO;
+import com.ninja_squad.geektic.dao.IGeekDAO;
+import com.ninja_squad.geektic.dao.IInteretDAO;
 import com.ninja_squad.geektic.metier.Geek;
 import com.ninja_squad.geektic.metier.Interet;
 
@@ -20,11 +20,11 @@ import com.ninja_squad.geektic.metier.Interet;
 @RequestMapping("/geek")
 public class GeekService {
 
-	GeekDAO daoG;
-	InteretDAO daoI;
+	IGeekDAO daoG;
+	IInteretDAO daoI;
 	
 	@Autowired
-	public GeekService(GeekDAO g, InteretDAO i) {
+	public GeekService(IGeekDAO g, IInteretDAO i) {
 		this.daoG = g;
 		this.daoI = i;
 	}
@@ -34,13 +34,15 @@ public class GeekService {
         return this.daoG.recupereGeeks(sexe, interet);
     }
 	
+
+	@RequestMapping(method = RequestMethod.GET, value="/{num}")
+	public Geek recupereUnGeek(@PathVariable("num") int num) {
+		return this.daoG.recupereUnGeek(num);
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, value="/interets")
 	public List<Interet> listeInterets() {
 		return this.daoI.listeInterets();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value="/{num}")
-	public Geek recupereUnGeek(@PathVariable("num") int num) {
-		return this.daoG.recupereUnGeek(num);
-	}
 }

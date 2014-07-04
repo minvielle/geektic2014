@@ -22,4 +22,11 @@ public class GeekDAOTest extends BaseDaoTest{
 		assertEquals("Azerty", l.get(0).getNom());
 		assertEquals("Princesse", l.get(1).getNom());
 	}
+	
+	@Test
+	public void testRecupereUnGeek() {
+		Geek g = dao.recupereUnGeek(0);
+		
+		assertEquals("Minvielle", g.getNom());
+	}
 }

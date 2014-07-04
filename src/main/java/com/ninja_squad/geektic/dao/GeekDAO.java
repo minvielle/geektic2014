@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.ninja_squad.geektic.metier.Geek;
 
 @Repository
-public class GeekDAO {
+public class GeekDAO implements IGeekDAO {
 
 	@PersistenceContext
 	private EntityManager em;

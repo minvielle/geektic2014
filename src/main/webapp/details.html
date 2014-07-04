@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
-<div ng-controller="DetailsCtrl">
+<div ng-controller="DetailsCtrl" class="jumbotron container geek text-center" style="max-width: 330px;">
     <h1>{{geek.nom}} {{geek.prenom}}</h1>
     
     <p><img src="http://www.gravatar.com/avatar/{{geek.url_gravatar}}"/></p>
     <p>Age : {{geek.age}}</p>
-    <p> Centres d'interêt: </p>    
+    <p> Centres d'int&eacute;r&ecirc;t: </p>    
     <ul>             
         <li ng-repeat="interet in geek.interets">
             {{ interet.nom }}
         </li>    
     </ul>
     
-    <a href="#/">Revenir à la page d'acceuil</a>
+    <a href="#/">Revenir &agrave; la page d'acceuil</a>
 </div>
